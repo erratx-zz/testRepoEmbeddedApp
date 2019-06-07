@@ -1,6 +1,15 @@
 <% include partials/header.ejs %>
-
-<b> HELLO WORLD </b>
-
+<script src = "https://us-east-1.online.tableau.com/#/site/ethansdemosite/javascripts/api/tableau-2.min.js"></scipt>
+<div id = "vizContainer"> </div>
+<script>
+  function initViz() {
+    var containerDiv = document.getElementsByID("vizContainer"),
+        url =  "https://us-east-1.online.tableau.com/#/site/ethansdemosite/views/SuperstoreSalesandProfit/SuperstoreSalesandProfit?:iid=1";
+    var viz = new tableau.Viz(containerDiv, url);
+  }
+  </script>
+<<button type="button" name="button" onclick=initViz()> CLICK ME</button>
+  </script>
+</script>
 </body>
 </html>
