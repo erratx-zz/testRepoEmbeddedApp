@@ -1,10 +1,10 @@
 <% include partials/header.ejs %>
-<script src = "https://us-east-1.online.tableau.com/#/site/ethansdemosite/javascripts/api/tableau-2.min.js"></script>
+<script src = "https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
 
 <script>
   function initViz() {
-    var containerDiv = document.getElementsByID("vizContainer"),
-        url =  "https://us-east-1.online.tableau.com/#/site/ethansdemosite/views/SuperstoreSalesandProfit/SuperstoreSalesandProfit?:iid=1";
+    var containerDiv = document.getElementsByID("vizContainer");
+    var url =  "http://public.tableau.com/views/RegionalSampleWorkbook/Storms";
     var viz = new tableau.Viz(containerDiv, url);
   }
   </script>
