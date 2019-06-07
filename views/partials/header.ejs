@@ -22,12 +22,12 @@
     }
 </style>
 <script type="text/javascript"
-	    src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
+	    src="https://online.tableau.com/javascripts/api/tableau-version.min.js"></script>
 <script tye ="text/javascript">
       var viz, workbook, activeSheet;
       function initViz() {
         var containerDiv = document.getElementById("vizContainer");
-        var url = "https://us-east-1.online.tableau.com/#/site/ethansdemosite/views/SuperstoreSalesandProfit/SuperstoreSalesandProfit";
+        var url = "https://us-east-1.online.tableau.com/t/ethansdemosite/views/SuperstoreSalesandProfit/SuperstoreSalesandProfit?iframeSizedToWindow=true&:embed=y&:showAppBanner=false&:display_count=no&:showVizHome=no&:origin=viz_share_link";
         var options = {
             hideTabs: true,
             hideToollbar: true,
@@ -35,4 +35,4 @@
         viz = new tableau.Viz(containerDiv, url, options);
       }
 </script>
-<body onload = "initViz()">
+<body onload = "initViz();">
