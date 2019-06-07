@@ -1,7 +1,7 @@
 const express = require('express');
-const fileUpload = require{'express-fileupload'};
-const bodyParser = require{'body-parser'};
-const path = require{'path'};
+const fileUpload = require('express-fileupload');
+const bodyParser = require('body-parser');
+const path = require('path');
 const app = express();
 
 
@@ -13,11 +13,11 @@ app.set('views',__dirname + '/views');
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: false}));
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirnam, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(fileUpload());
 
 app.get('/', getHomePage);
 
-app.list(port, () => {
-  console.log('Server running on port: ${port}');
+app.listen(port, () => {
+  console.log('Server running on port:' + port);
 });
