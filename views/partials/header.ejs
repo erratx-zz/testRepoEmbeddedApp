@@ -8,6 +8,20 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!--<link rel="stylesheet" href="/assets/css/custom.css">-->
     <title><%= title %></title>
+    <script type="text/javascript"
+    	    src="https://us-east-1.online.tableau.com/javascripts/api/viz_v1.js"></script>
+    <script tye ="text/javascript">
+          var viz, workbook, activeSheet;
+          function initViz() {
+            var containerDiv = document.getElementById("vizContainer");
+            var url = "https://us-east-1.online.tableau.com/t/ethansdemosite/views/SuperstoreSalesandProfit/SuperstoreSalesandProfit?iframeSizedToWindow=true&:embed=y&:showAppBanner=false&:display_count=no&:showVizHome=no&:origin=viz_share_link";
+            var options = {
+                hideTabs: true,
+                hideToollbar: true,
+            };
+            viz = new tableau.Viz(containerDiv, url, options);
+          }
+    </script>
 </head>
 <style>
    * {
@@ -21,18 +35,4 @@
         margin-top: 50px;
     }
 </style>
-<script type="text/javascript"
-	    src="https://us-east-1.online.tableau.com/javascripts/api/viz_v1.js"></script>
-<script tye ="text/javascript">
-      var viz, workbook, activeSheet;
-      function initViz() {
-        var containerDiv = document.getElementById("vizContainer");
-        var url = "https://us-east-1.online.tableau.com/t/ethansdemosite/views/SuperstoreSalesandProfit/SuperstoreSalesandProfit?iframeSizedToWindow=true&:embed=y&:showAppBanner=false&:display_count=no&:showVizHome=no&:origin=viz_share_link";
-        var options = {
-            hideTabs: true,
-            hideToollbar: true,
-        };
-        viz = new tableau.Viz(containerDiv, url, options);
-      }
-</script>
 <body onload = "initViz();">
