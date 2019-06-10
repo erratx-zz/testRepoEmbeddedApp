@@ -23,12 +23,12 @@
             // Create a viz object and embed it in the container div.
             var viz = new tableau.Viz(containerDiv, url, options);
         }
-        function yearFilter(year) {
+        function categoryFilter(category) {
             var sheet = viz.getWorkbook().getActiveSheet();
-            if (year == "") {
-              sheep.clearFilterAsync("Year");
+            if (category == "") {
+              sheep.clearFilterAsync("Category");
             } else {
-              sheet.applyFilterAsync("Year", year, tableau.FilterUpdateType.REPLACE);
+              sheet.applyFilterAsync("Category", category, tableau.FilterUpdateType.REPLACE);
             }
         }
     </script>
