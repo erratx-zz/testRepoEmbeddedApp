@@ -1,5 +1,12 @@
 <% include partials/header.ejs %>
 <div id="vizContainer" style="width:1300px; height:860px;"></div>
-<b> Test </b>
+<div id="controls" style="padding:20px;">
+        Year: <select id="changeYear" onchange="yearFilter(value);">
+            <option value="">All</option>
+            <option value="2016">2016</option>
+            <option value="2017">2017</option>
+            <option value="2018">2018</option>
+        </select>
+    </div>
 </body>
 </html>

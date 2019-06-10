@@ -23,6 +23,14 @@
             // Create a viz object and embed it in the container div.
             var viz = new tableau.Viz(containerDiv, url, options);
         }
+        function yearFilter(year) {
+            var sheet = viz.getWorkbook().getActiveSheet();
+            if (year == "") {
+              sheep.clearFilterAsync("Year");
+            } else {
+              sheet.applyFilterAsync("Year", year, tableau.FilterUpdateType.REPLACE);
+            }
+        }
     </script>
 </head>
 <style>
