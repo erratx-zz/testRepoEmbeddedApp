@@ -1,7 +1,9 @@
 module.exports = {
+    var examplePages = {'basic_embed.ejs'}
   getBasicEmbedPage: (req, res) => {
-    res.render('basic_embed.ejs', {
+    res.render(examplePages[0], {
       title: "JavaScript API | Basic Embed Examples"
+      exampleNumber: 1;
     });
   },
 };
