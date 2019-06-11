@@ -1,5 +1,17 @@
 <!doctype = html>
 <html lang = "en">
+<style>
+   * {
+         font-family: "Garamond";
+      }
+    .table-wrapper {
+        margin-top: 50px;
+    }
+
+    .add-player-form {
+        margin-top: 50px;
+    }
+</style>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -25,17 +37,22 @@
             var viz = new tableau.Viz(containerDiv, url, options);
         }
     </script>
+    <nav class = "navar navbar-inverse">
+        <div class = "container-fluid">
+            <div class = "navbar-header">
+                <a class = "navbar-brand" href = "/"> Javsscript API Demo </a>
+            </div>
+            <ul class ="nav navbar-nav">
+                <li class = "active"><a href = "https://onlinehelp.tableau.com/current/api/js_api/en-us/JavaScriptAPI/js_api.htm"> Getting Started</a></li>
+                <li class = "active"><a href = "https://onlinehelp.tableau.com/current/api/js_api/en-us/JavaScriptAPI/js_api_ref.htm"> Documentation </a></li>
+                <ul class = "dropdown-menu">
+                    <a class = "dropdown-togle" data-toggle = "dropdown" href ="/example1"> Examples
+                    <span class = "caret"></span></a>
+                    <li><a href = "/example1"> Basic Embed </a></li>
+                    <li><a href = "/example2"> Example 2 </a></li>
+                </ul>
+            </ul>
+        </div>
+    </nav>
 </head>
-<style>
-   * {
-         font-family: "Garamond";
-      }
-    .table-wrapper {
-        margin-top: 50px;
-    }
-
-    .add-player-form {
-        margin-top: 50px;
-    }
-</style>
 <body onload = "initViz();">
