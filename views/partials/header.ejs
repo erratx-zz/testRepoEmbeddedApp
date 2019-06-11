@@ -24,14 +24,6 @@
             // Create a viz object and embed it in the container div.
             var viz = new tableau.Viz(containerDiv, url, options);
         }
-        function categoryFilter(category) {
-            var sheet = viz.getWorkbook().getActiveSheet();
-            if (category === "") {
-              sheet.clearFilterAsync("Category");
-            } else {
-              sheet.applyFilterAsync("Category", category, tableau.FilterUpdateType.REPLACE);
-            }
-        }
     </script>
 </head>
 <style>
