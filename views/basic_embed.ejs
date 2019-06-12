@@ -27,9 +27,21 @@
                     Here is where getting started information will go.
                 </p>
                 <h3><b>Code</b></h3>
-                <pre><code class = "prettyprint lang-html">
-                    &lt;p&gt;Sample text here...&lt;/p&gt;
-                    &lt;p&gt;And another line of sample text here...&lt;/p&gt;
+                <pre><code class = "prettyprint lang-javascript">
+                    var viz;
+                    function initViz() {
+                        var containerDiv = document.getElementById("vizContainer"),
+                            url = "https://us-east-1.online.tableau.com/t/ethansdemosite/views/SuperstoreSalesandProfit/SuperstoreSalesandProfit",
+                            options = {
+                                hideTabs: true,
+                                onFirstInteractive: function () {
+                                    console.log("Run this code when the viz has finished loading.");
+                                }
+                            };
+
+                        // Create a viz object and embed it in the container div.
+                        var viz = new tableau.Viz(containerDiv, url, options);
+                    }
                 </code></pre>
                 </div>
             </div>
