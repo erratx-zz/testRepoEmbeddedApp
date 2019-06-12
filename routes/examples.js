@@ -2,7 +2,7 @@ module.exports = {
     getExamplesHomePage: (req, res) => {
         res.render('examples_home.ejs', {
             title: "JavaScript API | Examples Homepage",
-            example_num = 0
+            example_num: 0
         });
     },
     getBasicEmbedPage: (req, res) => {
