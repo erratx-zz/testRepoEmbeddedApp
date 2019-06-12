@@ -7,33 +7,33 @@
             <% include partials/example_nav.ejs %>
             <div class="panel panel-default">
                 <div class="panel-heading"><h2><b class = "text-primary">Example 1: Basic Embed</b></h2></div>
-            <div class="panel-body">
-                <h3><b>Before Starting</b></h3>
-                <p>
-                    Here is where a list of before starting information will go.
-                </p>
-                <h3><b>Getting Started</b></h3>
-                <p>
-                    Here is where getting started information will go.
-                </p>
-                <h3><b>Code</b></h3>
-                <code class = "prettyprint lang-javascript">
-                    var viz;
-                    function initViz() {
-                        var containerDiv = document.getElementById("vizContainer")
-                        var url = "https://us-east-1.online.tableau.com/t/ethansdemosite/views/SuperstoreSalesandProfit/SuperstoreSalesandProfit"
-                        var options = {
-                            hideTabs: true,
-                            onFirstInteractive: function () {
-                                console.log("Run this code when the viz has finished loading.");
-                            }
-                        };
-                        // Create a viz object and embed it in the container div.
-                        var viz = new tableau.Viz(containerDiv, url, options);
-                    }
-                </code>
+                <div class="panel-body">
+                    <h3><b>Before Starting</b></h3>
+                    <p>
+                        Here is where a list of before starting information will go.
+                    </p>
+                    <h3><b>Getting Started</b></h3>
+                    <p>
+                        Here is where getting started information will go.
+                    </p>
+                    <h3><b>Code</b></h3>
+                    <code class = "prettyprint lang-javascript">
+                        var viz;
+                        function initViz() {
+                            var containerDiv = document.getElementById("vizContainer")
+                            var url = "https://us-east-1.online.tableau.com/t/ethansdemosite/views/SuperstoreSalesandProfit/SuperstoreSalesandProfit"
+                            var options = {
+                                hideTabs: true,
+                                onFirstInteractive: function () {
+                                    console.log("Run this code when the viz has finished loading.");
+                                }
+                            };
+                            // Create a viz object and embed it in the container div.
+                            var viz = new tableau.Viz(containerDiv, url, options);
+                        }
+                    </code>
+                    </div>
                 </div>
-            </div>
             <div class = "col-md-1"> </div>
         </div>
         <div class = "row">
