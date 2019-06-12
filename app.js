@@ -6,7 +6,7 @@ const app = express();
 
 
 const {getHomePage} = require('./routes/index');
-const {getBasicEmbedPage} = require ('./routes/examples');
+const {getExamplesHomePage, getBasicEmbedPage} = require ('./routes/examples');
 const port = 5000;
 
 app.set('port', process.env.port || port);
@@ -17,6 +17,7 @@ app.use(bodyParser.json());
 app.use(fileUpload());
 
 app.get('/', getHomePage);
+app.get('/examples_home', getExamplesHomePage)
 app.get('/basic_embed', getBasicEmbedPage);
 
 app.listen(port, () => {
