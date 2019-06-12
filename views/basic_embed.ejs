@@ -5,13 +5,25 @@
         <div class = "row">
             <div class = "col-md-1"> </div>
             <ul class="nav nav-tabs">
-                <li>
+                <% if(example_num === 0) { %>
+                    <li class = "active>"
+                <% } else { %>
+                    <li>
+                <% } %>
                     <a href = "/examples_home"> Home </a>
                 </li>
-                <li class = "active">
+                <% if(example_num === 1) { %>
+                    <li class = "active>"
+                <% } else { %>
+                    <li>
+                <% } %>
                     <a href = "/basic_embed">Example 1: Basic Embed</a>
                 </li>
-                <li>
+                <% if(example_num === 2) { %>
+                    <li class = "active>"
+                <% } else { %>
+                    <li>
+                <% } %>
                     <a  href = "/example2">Example 2: </a>
                 </li>
             </ul>
@@ -27,21 +39,21 @@
                     Here is where getting started information will go.
                 </p>
                 <h3><b>Code</b></h3>
-                <pre><code class = "prettyprint lang-javascript">
+                <code class = "prettyprint lang-javascript">
                     var viz;
                     function initViz() {
                         var containerDiv = document.getElementById("vizContainer")
                         var url = "https://us-east-1.online.tableau.com/t/ethansdemosite/views/SuperstoreSalesandProfit/SuperstoreSalesandProfit"
                         var options = {
-                                hideTabs: true,
-                                onFirstInteractive: function () {
-                                    console.log("Run this code when the viz has finished loading.");
-                                }
-                            };
+                            hideTabs: true,
+                            onFirstInteractive: function () {
+                                console.log("Run this code when the viz has finished loading.");
+                            }
+                        };
                         // Create a viz object and embed it in the container div.
                         var viz = new tableau.Viz(containerDiv, url, options);
                     }
-                </code></pre>
+                </code>
                 </div>
             </div>
             <div class = "col-md-1"> </div>
