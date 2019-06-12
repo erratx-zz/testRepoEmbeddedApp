@@ -1,18 +1,32 @@
 <% include partials/header.ejs %>
 <% include partials/navbar.ejs %>
 <body>
-    <div class = "row">
-        <div class = "col-md-1"> </div>
-        <div class="panel panel-default">
-            <div class="panel-heading"><h2><b class = "text-primary">Introduction</b></h2></div>
-        <div class="panel-body">
-            <h3><b>Preface</b></h3>
-            <p>
-                Here is where a list of before starting information will go.
-            </p>
+    <% include partials/ToC.ejs %>
+    <div class = "container">
+        <div class = "all-questions">
+            <div class = "row">
+                <div class = "col-md-1"> </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading"><h2><b class = "text-primary">Introduction</b></h2></div>
+                <div class="panel-body">
+                    <h3 id = "one"><b>Preface</b></h3>
+                    <p>
+                        Here is where a list of before starting information will go.
+                    </p>
+                    <h3 id = "two"><b>Introduction</b></h3>
+                    <p>
+                        Here is where a list of before starting information will go.
+                    </p>
+                    <h3 id = "three"><b>Resources</b></h3>
+                    <p>
+                        Here is where a list of before starting information will go.
+                    </p>
 
+                </div>
+                <div class = "col-md-1"> </div>
+            </div>
         </div>
-        <div class = "col-md-1"> </div>
     </div>
+</div>
 </body>
 </html>
