@@ -6,13 +6,25 @@
             <div class = "row">
                 <div class = "col-md-1"> </div>
                 <ul class="nav nav-tabs">
-                    <li class = "active">
+                    <% if(example_num === 0) { %>
+                        <li class = "active">
+                    <% } else { %>
+                        <li>
+                    <% } %>
                         <a href = "/examples_home"> Home </a>
                     </li>
-                    <li>
+                    <% if(example_num === 1) { %>
+                        <li class = "active">
+                    <% } else { %>
+                        <li>
+                    <% } %>
                         <a href = "/basic_embed">Example 1: Basic Embed</a>
                     </li>
-                    <li>
+                    <% if(example_num === 2) { %>
+                        <li class = "active">
+                    <% } else { %>
+                        <li>
+                    <% } %>
                         <a  href = "/example2">Example 2: </a>
                     </li>
                 </ul>
