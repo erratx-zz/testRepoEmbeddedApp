@@ -30,15 +30,14 @@
                 <pre><code class = "prettyprint lang-javascript">
                     var viz;
                     function initViz() {
-                        var containerDiv = document.getElementById("vizContainer"),
-                            url = "https://us-east-1.online.tableau.com/t/ethansdemosite/views/SuperstoreSalesandProfit/SuperstoreSalesandProfit",
-                            options = {
+                        var containerDiv = document.getElementById("vizContainer")
+                        var url = "https://us-east-1.online.tableau.com/t/ethansdemosite/views/SuperstoreSalesandProfit/SuperstoreSalesandProfit"
+                        var options = {
                                 hideTabs: true,
                                 onFirstInteractive: function () {
                                     console.log("Run this code when the viz has finished loading.");
                                 }
                             };
-
                         // Create a viz object and embed it in the container div.
                         var viz = new tableau.Viz(containerDiv, url, options);
                     }
