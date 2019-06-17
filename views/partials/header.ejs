@@ -26,20 +26,4 @@
     <!--<link rel="stylesheet" href="/assets/css/custom.css">-->
     <title><%= title %></title>
     <script type="text/javascript" src="https://10az.online.tableau.com/javascripts/api/tableau-2.min.js"></script>
-    <script type="text/javascript">
-        var viz;
-        function initViz() {
-            var containerDiv = document.getElementById("vizContainer"),
-                url = "https://us-east-1.online.tableau.com/t/ethansdemosite/views/SuperstoreSalesandProfit/SuperstoreSalesandProfit",
-                options = {
-                    hideTabs: true,
-                    onFirstInteractive: function () {
-                        console.log("Run this code when the viz has finished loading.");
-                    }
-                };
-
-            // Create a viz object and embed it in the container div.
-            var viz = new tableau.Viz(containerDiv, url, options);
-        }
-    </script>
 </head>
