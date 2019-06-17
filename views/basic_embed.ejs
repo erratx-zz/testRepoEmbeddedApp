@@ -31,26 +31,29 @@
                     <h3><b>Instructions</b></h3>
                     <ol>
                         <li>Include the JavaScript API from the Tableau Server hosting the visualizations.</li>
+                            <pre><code>
+                                &lt;script type="text/javascript" src="https://10az.online.tableau.com/javascripts/api/tableau-2.min.js"&gt;&lt;/script&gt;
+                            </code></pre>
                         <li>Create a container in the body of page.</li>
-                        <pre><code>
-                            &lt;div class = "vizContainer"%gt;%lt;/div%gt;
-                        </code></pre>
+                            <pre><code class = "prettyprint lang-javascript">
+                                &lt;div class = "vizContainer"&gt;&lt;/div&gt;
+                            </code></pre>
                         <li>Write a function which initiates a viz into the container.</li>
-                        <pre><code class = "prettyprint lang-javascript">
-                            var viz;
-                            function initViz() {
-                                var vizContainer = document.getElementById("vizContainer")
-                                var url = "https://us-east-1.online.tableau.com/t/ethansdemosite/views/SuperstoreSalesandProfit/SuperstoreSalesandProfit"
-                                var options = {
-                                    hideTabs: true,
-                                    onFirstInteractive: function () {
-                                        console.log("Run this code when the viz has finished loading.");
-                                    }
-                                };
-                                // Create a viz object and embed it in the container div.
-                                var viz = new tableau.Viz(vizContainer, url, options);
-                            }
-                        </code></pre>
+                            <pre><code class = "prettyprint lang-javascript">
+                                var viz;
+                                function initViz() {
+                                    var vizContainer = document.getElementById("vizContainer")
+                                    var url = "https://us-east-1.online.tableau.com/t/ethansdemosite/views/SuperstoreSalesandProfit/SuperstoreSalesandProfit"
+                                    var options = {
+                                        hideTabs: true,
+                                        onFirstInteractive: function () {
+                                            console.log("Run this code when the viz has finished loading.");
+                                        }
+                                    };
+                                    // Create a viz object and embed it in the container div.
+                                    var viz = new tableau.Viz(vizContainer, url, options);
+                                }
+                            </code></pre>
                         <li>Call the function to initialize the viz (note: this can be done in a variety ways but for the sake of this example we will do it when the <code>body</code> loads)</li>
                     </ol>
 
