@@ -6,8 +6,7 @@
         var vizContainer = document.getElementById("vizContainer"),
             url = "https://us-east-1.online.tableau.com/t/ethansdemosite/views/SalesandProfitAnalysis/Dashboard1",
             options = {
-                hideTabs: true,
-                "YEAR(Order Date)": ""
+                hideTabs: true
             };
         // Create a viz object and embed it in the container div.
         var viz = new tableau.Viz(vizContainer, url, options);
@@ -16,9 +15,9 @@
         var sheets[] = viz.getWorkbook().getActiveSheet().getWorkSheets();
         for (int i = 0; i < sheets.length; i++) {
             if (year == "") {
-                sheets[i].clearFilterAsync("Order Date");
+                sheets[i].getActiveSheet().clearFilterAsync("YEAR(Order Date)");
             } else {
-                sheets[i].applyFilterAsync("Order Date", year, tableau.FilterUpdateType.REPLACE);
+                sheets[i].getActiveSheet().applyFilterAsync("YEAR(Order Date)", year, tableau.FilterUpdateType.REPLACE);
             }
         }
     }
