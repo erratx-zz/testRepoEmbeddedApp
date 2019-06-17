@@ -7,7 +7,7 @@
             url = "https://us-east-1.online.tableau.com/t/ethansdemosite/views/SalesandProfitAnalysis/Dashboard1",
             options = {
                 hideTabs: true,
-                year: ""
+                "YEAR(Order Date)": ""
             };
         // Create a viz object and embed it in the container div.
         var viz = new tableau.Viz(vizContainer, url, options);
