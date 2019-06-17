@@ -32,7 +32,7 @@
             <div class = "col-md-1"> </div>
             <% include partials/example_nav.ejs %>
             <div class="panel panel-default">
-                <div class="panel-heading"><h2><b class = "text-primary">Example 1: Basic Embed</b></h2></div>
+                <div class="panel-heading"><h2><b class = "text-primary">Example 2: Dyanmic Load</b></h2></div>
                 <div class="panel-body">
                     <h3><b>Before Starting</b></h3>
                     <p>
@@ -75,6 +75,14 @@
         </div>
         <div class = "row">
             <div class = "col-md-1"> </div>
+            <ul class = "nav nav-tabs">
+                <li>
+                    <a onclick="javascript:createViz(-1);"></a>
+                </li>
+                <li>
+                    <a onclick onclick= "javascript:createViz(1);"></a>
+                </li>
+            </ul>
             <button style="width:100px;" onclick="javascript:createViz(-1);">Previous</button>
             <button style="width:100px;" onclick="javascript:createViz(1);">Next</button>
             <div id = "vizContainer"></div>
