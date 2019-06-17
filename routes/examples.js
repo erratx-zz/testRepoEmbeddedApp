@@ -7,8 +7,14 @@ module.exports = {
     },
     getBasicEmbedPage: (req, res) => {
         res.render('basic_embed.ejs', {
-            title: "JavaScript API | Basic Embed Examples",
+            title: "JavaScript API | Basic Embed Example",
             example_num: 1
         });
     },
+    getDynamicLoadPage: (req, res) => {
+        res.render('dynamic_load.ejs', {
+            title: "JavaScript API | Dynamic Load Example"
+            example_num = 2;
+        })
+    }
 };

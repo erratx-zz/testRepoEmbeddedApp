@@ -6,7 +6,7 @@ const app = express();
 
 
 const {getHomePage} = require('./routes/index');
-const {getExamplesHomePage, getBasicEmbedPage} = require ('./routes/examples');
+const {getExamplesHomePage, getBasicEmbedPage, getDynamicLoadPage} = require ('./routes/examples');
 const port = 5000;
 
 app.set('port', process.env.port || port);
