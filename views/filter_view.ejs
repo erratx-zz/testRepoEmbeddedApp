@@ -25,6 +25,16 @@
             }
         }
     }
+    function categoryFilter(category) {
+        var sheets = viz.getWorkbook().getActiveSheet().getWorksheets();
+        for (var i = 0; i < sheets.length; i++) {
+            if (year === "") {
+                sheets[i].clearFilterAsync("Category");
+            } else {
+                sheets[i].applyFilterAsync("Category", category, tableau.FilterUpdateType.REPLACE);
+            }
+        }
+    }
 </script>
 <body onload = "initViz();">
     <div class = "container">
@@ -76,12 +86,20 @@
         <div class = "row">
             <div class = "col-md-1"> </div>
             <div id="controls" class = "center">
-                Year: <select class = "form-control center" id="changeYear" onchange="yearFilter(value);">
+                Filter the view by year: <select class = "form-control center" id="changeYear" onchange="yearFilter(value);">
                     <option value="">All</option>
                     <option value="2015">2013</option>
                     <option value="2016">2014</option>
                     <option value="2017">2014</option>
                     <option value="2018">2014</option>
+                </select>
+            </div>
+            <div id="controls" class = "center">
+                Filter the view by category: <select class = "form-control center" id="changeYear" onchange="categoryFilter(value);">
+                    <option value="">All</option>
+                    <option value="Furniture">Furniture</option>
+                    <option value="Office Supplies">Office Supplies</option>
+                    <option value="Technology">Technology</option>
                 </select>
             </div>
             <div id = "vizContainer"></div>
