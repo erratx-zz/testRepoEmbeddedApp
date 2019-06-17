@@ -19,6 +19,7 @@ app.use(fileUpload());
 app.get('/', getHomePage);
 app.get('/examples_home', getExamplesHomePage)
 app.get('/basic_embed', getBasicEmbedPage);
+app.get('/dynamic_load', getDynamicLoadPage);
 
 app.listen(port, () => {
   console.log('Server running on port:' + port);
