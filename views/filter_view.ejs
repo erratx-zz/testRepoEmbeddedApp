@@ -85,25 +85,27 @@
         </div>
         <div class = "row">
             <div class = "col-md-1"> </div>
-            <div id="controls">
-                Filter the view by year: <select class = "form-control center" id="changeYear" onchange="yearFilter(value);">
-                    <option value="">All</option>
-                    <option value="2015">2013</option>
-                    <option value="2016">2014</option>
-                    <option value="2017">2014</option>
-                    <option value="2018">2014</option>
-                </select>
+            <div class = "col">
+                <div id="controls">
+                    Filter the view by year: <select class = "form-control center" id="changeYear" onchange="yearFilter(value);">
+                        <option value="">All</option>
+                        <option value="2015">2013</option>
+                        <option value="2016">2014</option>
+                        <option value="2017">2014</option>
+                        <option value="2018">2014</option>
+                    </select>
+                </div>
+                <br>
+                <div id="controls">
+                    Filter the view by category: <select class = "form-control center" id="changeYear" onchange="categoryFilter(value);">
+                        <option value="">All</option>
+                        <option value="Furniture">Furniture</option>
+                        <option value="Office Supplies">Office Supplies</option>
+                        <option value="Technology">Technology</option>
+                    </select>
+                </div>
+                <div id = "vizContainer"></div>
             </div>
-            <br>
-            <div id="controls">
-                Filter the view by category: <select class = "form-control center" id="changeYear" onchange="categoryFilter(value);">
-                    <option value="">All</option>
-                    <option value="Furniture">Furniture</option>
-                    <option value="Office Supplies">Office Supplies</option>
-                    <option value="Technology">Technology</option>
-                </select>
-            </div>
-            <div id = "vizContainer"></div>
             <div class = "col-md-1"> </div>
         </div>
         <div class = "row">
