@@ -78,6 +78,16 @@
                                 }
                             }
                         }
+                        function categoryFilter(category) {
+                            var sheets = viz.getWorkbook().getActiveSheet().getWorksheets();
+                            for (var i = 0; i < sheets.length; i++) {
+                                if (category === "") {
+                                    sheets[i].clearFilterAsync("Category");
+                                } else {
+                                    sheets[i].applyFilterAsync("Category", category, tableau.FilterUpdateType.REPLACE);
+                                }
+                            }
+                        }
                     </code></pre>
                     </div>
                 </div>
