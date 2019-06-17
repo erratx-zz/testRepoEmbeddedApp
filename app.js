@@ -6,7 +6,7 @@ const app = express();
 
 
 const {getHomePage} = require('./routes/index');
-const {getExamplesHomePage, getBasicEmbedPage, getDynamicLoadPage} = require ('./routes/examples');
+const {getExamplesHomePage, getBasicEmbedPage, getDynamicLoadPage, getFilterViewPage} = require ('./routes/examples');
 const port = 5000;
 
 app.set('port', process.env.port || port);
@@ -20,6 +20,7 @@ app.get('/', getHomePage);
 app.get('/examples_home', getExamplesHomePage)
 app.get('/basic_embed', getBasicEmbedPage);
 app.get('/dynamic_load', getDynamicLoadPage);
+app.get('/filter_view', getFilterViewPage);
 
 app.listen(port, () => {
   console.log('Server running on port:' + port);

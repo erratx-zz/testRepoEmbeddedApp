@@ -1,0 +1,98 @@
+<% include partials/header.ejs %>
+<% include partials/navbar.ejs %>
+<script type="text/javascript">
+    var viz;
+    function initViz() {
+        var vizContainer = document.getElementById("vizContainer"),
+            url = "https://us-east-1.online.tableau.com/t/ethansdemosite/views/SalesandProfitAnalysis/Dashboard1",
+            options = {
+                hideTabs: true,
+                year: ""
+            };
+        // Create a viz object and embed it in the container div.
+        var viz = new tableau.Viz(vizContainer, url, options);
+    }
+    function yearFilter(year) {
+        var sheets[] = viz.getWorkbook().getActiveSheet().getWorkSheets();
+        for (int i = 0; i < sheets.length; i++) {
+            if (year == "") {
+                sheets[i].clearFilterAsync("Order Date");
+            } else {
+                sheets[i].applyFilterAsync("Order Date", year, tableau.FilterUpdateType.REPLACE);
+            }
+        }
+    }
+</script>
+<body onload = "initViz();">
+    <div class = "container">
+        <div class = "row">
+            <div class = "col-md-1"> </div>
+            <% include partials/example_nav.ejs %>
+            <div class="panel panel-default">
+                <div class="panel-heading"><h2><b class = "text-primary">Example 3: Filtering</b></h2></div>
+                <div class="panel-body">
+                    <h3><b>Before Starting</b></h3>
+                    <p>
+                        Here is where a list of before starting information will go.
+                    </p>
+                    <h3><b>Getting Started</b></h3>
+                    <p>
+                        Here is where getting started information will go.
+                    </p>
+                    <h3><b>Code</b></h3>
+                    <pre><code class = "prettyprint lang-javascript">
+                        var viz;
+                        function initViz() {
+                            var vizContainer = document.getElementById("vizContainer"),
+                                url = "https://us-east-1.online.tableau.com/t/ethansdemosite/views/SalesandProfitAnalysis/Dashboard1",
+                                options = {
+                                    hideTabs: true,
+                                    year: ""
+                                };
+                            // Create a viz object and embed it in the container div.
+                            var viz = new tableau.Viz(vizContainer, url, options);
+                        }
+                        function yearFilter(year) {
+                            var sheets[] = viz.getWorkbook().getActiveSheet().getWorkSheets();
+                            for (int i = 0; i < sheets.length; i++) {
+                                if (year == "") {
+                                    sheets[i].clearFilterAsync("Order Date");
+                                } else {
+                                    sheets[i].applyFilterAsync("Order Date", year, tableau.FilterUpdateType.REPLACE);
+                                }
+                            }
+                        }
+                    </code></pre>
+                    </div>
+                </div>
+            <div class = "col-md-1"> </div>
+        </div>
+        <div class = "row">
+            <div class = "col-md-1"> </div>
+            <div id="controls" style="padding:20px;">
+                Year: <select id="changeYear" onchange="yearFilter(value);">
+                    <option value="">All</option>
+                    <option value="2015">2013</option>
+                    <option value="2016">2014</option>
+                    <option value="2017">2014</option>
+                    <option value="2018">2014</option>
+                </select>
+            </div>
+<
+            <div id = "vizContainer"></div>
+            <div class = "col-md-1"> </div>
+        </div>
+        <div class = "row">
+            <div class = "col-md-1"> </div>
+            <div class="panel panel-default">
+            <div class="panel-body">
+                <h3<b>Closing Notes</b></h3>
+                <p>
+                    Here is where closing notes will go.
+                </p>
+            </div>
+            <div class = "col-md-1"> </div>
+        </div>
+    </div>
+</body>
+</html>

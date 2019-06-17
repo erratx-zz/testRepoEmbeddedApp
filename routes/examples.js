@@ -15,6 +15,12 @@ module.exports = {
         res.render('dynamic_load.ejs', {
             title: "JavaScript API | Dynamic Load Example",
             example_num: 2
-        })
+        });
+    },
+    getFilterViewPage: (req, res) => {
+        res.render('filter_view.ejs', {
+            title: "JavaScript API | Filtering Example",
+            example_num: 3
+        });
     }
 };
