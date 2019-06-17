@@ -14,7 +14,7 @@ module.exports = {
     getDynamicLoadPage: (req, res) => {
         res.render('dynamic_load.ejs', {
             title: "JavaScript API | Dynamic Load Example",
-            example_num: 2;
+            example_num: 2
         })
     }
 };
