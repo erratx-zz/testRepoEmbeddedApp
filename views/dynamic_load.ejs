@@ -10,21 +10,26 @@
     var vizIndex = 0;
 
     function createViz(vizIncrement) {
+        console.log("got here 1");
         var vizDiv = document.getElementById("vizContainer");
         var options = {
             hideTabs = true;
         };
         vizIndex += vizIncrement;
         if (vizIndex >= numViz) {
+            console.log("got here 2");
             vizIndex = 0;
         } else if (vizIndex < 0) {
+            console.log("got here 3");
             vizIndex = numViz - 1;
         }
         if (viz) {
+            console.log("got here 4");
             viz.dispose();
         }
         var vizURL = vizList[vizIndex];
         viz = new tableau.Viz(vizDiv, vizURL, options);
+        console.log("got here 5");
     }
 </script>
 <body onload = "createViz(0)">
