@@ -47,21 +47,24 @@
                         var viz;
                         function initViz() {
                             var vizContainer = document.getElementById("vizContainer"),
-                                url = "https://us-east-1.online.tableau.com/t/ethansdemosite/views/SalesandProfitAnalysis/Dashboard1",
+                                url = "https://us-east-1.online.tableau.com/t/ethansdemosite/views/SuperstoreSalesandProfit/SuperstoreSalesandProfit",
                                 options = {
                                     hideTabs: true,
-                                    year: ""
+                                    onFirstInteractive: function () {
+                                        console.log("Run this code when the viz has finished loading.");
+                                    }
                                 };
+
                             // Create a viz object and embed it in the container div.
-                            var viz = new tableau.Viz(vizContainer, url, options);
+                            viz = new tableau.Viz(vizContainer, url, options);
                         }
                         function yearFilter(year) {
-                            var sheets[] = viz.getWorkbook().getActiveSheet().getWorkSheets();
-                            for (int i = 0; i < sheets.length; i++) {
-                                if (year == "") {
-                                    sheets[i].clearFilterAsync("Order Date");
+                            var sheets = viz.getWorkbook().getActiveSheet().getWorksheets();
+                            for (var i = 0; i < sheets.length; i++) {
+                                if (year === "") {
+                                    sheets[i].clearFilterAsync("YEAR(Order Date)");
                                 } else {
-                                    sheets[i].applyFilterAsync("Order Date", year, tableau.FilterUpdateType.REPLACE);
+                                    sheets[i].applyFilterAsync("YEAR(Order Date)", year, tableau.FilterUpdateType.REPLACE);
                                 }
                             }
                         }
@@ -73,7 +76,7 @@
         <div class = "row">
             <div class = "col-md-1"> </div>
             <div id="controls" style="padding:20px;">
-                Year: <select id="changeYear" onchange="yearFilter(value);">
+                Year: <select class = "form-control" id="changeYear" onchange="yearFilter(value);">
                     <option value="">All</option>
                     <option value="2015">2013</option>
                     <option value="2016">2014</option>
