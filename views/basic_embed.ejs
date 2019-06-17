@@ -3,7 +3,7 @@
 <script type="text/javascript">
     var viz;
     function initViz() {
-        var containerDiv = document.getElementById("vizContainer"),
+        var vizContainer = document.getElementById("vizContainer"),
             url = "https://us-east-1.online.tableau.com/t/ethansdemosite/views/SuperstoreSalesandProfit/SuperstoreSalesandProfit",
             options = {
                 hideTabs: true,
@@ -13,7 +13,7 @@
             };
 
         // Create a viz object and embed it in the container div.
-        var viz = new tableau.Viz(containerDiv, url, options);
+        var viz = new tableau.Viz(vizContainer, url, options);
     }
 </script>
 <body onload = "initViz();">
@@ -36,7 +36,7 @@
                     <code class = "prettyprint lang-javascript">
                         var viz;
                         function initViz() {
-                            var containerDiv = document.getElementById("vizContainer")
+                            var vizContainer = document.getElementById("vizContainer")
                             var url = "https://us-east-1.online.tableau.com/t/ethansdemosite/views/SuperstoreSalesandProfit/SuperstoreSalesandProfit"
                             var options = {
                                 hideTabs: true,
@@ -45,7 +45,7 @@
                                 }
                             };
                             // Create a viz object and embed it in the container div.
-                            var viz = new tableau.Viz(containerDiv, url, options);
+                            var viz = new tableau.Viz(vizContainer, url, options);
                         }
                     </code>
                     </div>

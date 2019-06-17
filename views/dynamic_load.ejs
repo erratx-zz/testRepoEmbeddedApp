@@ -1,6 +1,6 @@
 <% include partials/header.ejs %>
 <% include partials/navbar.ejs %>
-<script type = "text/javascript">
+<script type= "text/javascript">
     var vizList = [
         "https://us-east-1.online.tableau.com/t/ethansdemosite/views/SuperstoreSalesandProfit/SuperstoreSalesandProfit",
         "https://us-east-1.online.tableau.com/#/site/ethansdemosite/views/ProfitabilityIssues/Dashboard1"
@@ -10,30 +10,25 @@
     var vizIndex = 0;
 
     function createViz(vizIncrement) {
-        console.log("got here 1");
-        var vizDiv = document.getElementById("vizContainer");
+        var vizContainer = document.getElementById("vizContainer");
         var options = {
             hideTabs = true;
         };
         vizIndex += vizIncrement;
         if (vizIndex >= numViz) {
-            console.log("got here 2");
             vizIndex = 0;
         } else if (vizIndex < 0) {
-            console.log("got here 3");
             vizIndex = numViz - 1;
         }
         if (viz) {
-            console.log("got here 4");
             viz.dispose();
         }
-        var vizURL = vizList[vizIndex];
-        viz = new tableau.Viz(vizDiv, vizURL, options);
-        console.log("got here 5");
+        viz = new tableau.Viz(vizContainer, vizList[vizIndex], options);
     }
 </script>
-<body onload = "createViz(0)">
+<body onload = "createViz(0);">
     <div id = "vizContainer"></div>
     <button style="width:100px;" onclick="javascript:createViz(-1);">Previous</button>
     <button style="width:100px;" onclick="javascript:createViz(1);">Next</button>
 </body>
+</html>
