@@ -24,30 +24,36 @@
             <div class="panel panel-default">
                 <div class="panel-heading"><h2><b class = "text-primary">Example 1: Basic Embed</b></h2></div>
                 <div class="panel-body">
-                    <h3><b>Before Starting</b></h3>
-                    <p>
-                        Here is where a list of before starting information will go.
-                    </p>
                     <h3><b>Getting Started</b></h3>
                     <p>
-                        Here is where getting started information will go.
+                        In this first example you will learn the basics of embedding a Viz into a webpage.  As a note, in the context of the JavaScript API a <code>Viz</code> is the parent class for all embeddable Tableau objects.  This can include dashboards, sheets, and stories.  In this example we will be embedding a dashboard, but the same code can be applied to an individual sheet or a story with minor tweaks.
                     </p>
-                    <h3><b>Code</b></h3>
-                    <pre><code class = "prettyprint lang-javascript">
-                        var viz;
-                        function initViz() {
-                            var vizContainer = document.getElementById("vizContainer")
-                            var url = "https://us-east-1.online.tableau.com/t/ethansdemosite/views/SuperstoreSalesandProfit/SuperstoreSalesandProfit"
-                            var options = {
-                                hideTabs: true,
-                                onFirstInteractive: function () {
-                                    console.log("Run this code when the viz has finished loading.");
-                                }
-                            };
-                            // Create a viz object and embed it in the container div.
-                            var viz = new tableau.Viz(vizContainer, url, options);
-                        }
-                    </code></pre>
+                    <h3><b>Instructions</b></h3>
+                    <ol>
+                        <li>Include the JavaScript API from the Tableau Server hosting the visualizations.</li>
+                        <li>Create a container in the body of page.</li>
+                        <pre><code>
+                            &lt;div class = "vizContainer"%gt;%lt;/div%gt;
+                        </code></pre>
+                        <li>Write a function which initiates a viz into the container.</li>
+                        <pre><code class = "prettyprint lang-javascript">
+                            var viz;
+                            function initViz() {
+                                var vizContainer = document.getElementById("vizContainer")
+                                var url = "https://us-east-1.online.tableau.com/t/ethansdemosite/views/SuperstoreSalesandProfit/SuperstoreSalesandProfit"
+                                var options = {
+                                    hideTabs: true,
+                                    onFirstInteractive: function () {
+                                        console.log("Run this code when the viz has finished loading.");
+                                    }
+                                };
+                                // Create a viz object and embed it in the container div.
+                                var viz = new tableau.Viz(vizContainer, url, options);
+                            }
+                        </code></pre>
+                        <li>Call the function to initialize the viz (note: this can be done in a variety ways but for the sake of this example we will do it when the <code>body</code> loads)</li>
+                    </ol>
+
                     </div>
                 </div>
             <div class = "col-md-1"> </div>
