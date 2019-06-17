@@ -4,10 +4,14 @@
     var viz;
     function initViz() {
         var vizContainer = document.getElementById("vizContainer"),
-            url = "https://us-east-1.online.tableau.com/t/ethansdemosite/views/SalesandProfitAnalysis/Dashboard1",
+            url = "https://us-east-1.online.tableau.com/t/ethansdemosite/views/SuperstoreSalesandProfit/SuperstoreSalesandProfit",
             options = {
-                hideTabs: true
+                hideTabs: true,
+                onFirstInteractive: function () {
+                    console.log("Run this code when the viz has finished loading.");
+                }
             };
+
         // Create a viz object and embed it in the container div.
         var viz = new tableau.Viz(vizContainer, url, options);
     }
@@ -20,7 +24,7 @@
     //             sheets[i].getActiveSheet().applyFilterAsync("YEAR(Order Date)", year, tableau.FilterUpdateType.REPLACE);
     //         }
     //     }
-    }
+    //}
 </script>
 <body onload = "initViz();">
     <div class = "container">
