@@ -18,10 +18,10 @@
     function yearFilter(year) {
         var sheets = viz.getWorkbook().getActiveSheet().getWorkSheets();
         for (var i = 0; i < sheets.length; i++) {
-            if (year == "") {
-                sheets[i].getActiveSheet().clearFilterAsync("YEAR(Order Date)");
+            if (year === "") {
+                sheets[i].clearFilterAsync("YEAR(Order Date)");
             } else {
-                sheets[i].getActiveSheet().applyFilterAsync("YEAR(Order Date)", year, tableau.FilterUpdateType.REPLACE);
+                sheets[i].applyFilterAsync("YEAR(Order Date)", year, tableau.FilterUpdateType.REPLACE);
             }
         }
     }
