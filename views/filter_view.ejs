@@ -16,7 +16,7 @@
         var viz = new tableau.Viz(vizContainer, url, options);
     }
     function yearFilter(year) {
-        var sheets[] = viz.getWorkbook().getActiveSheet().getWorkSheets();
+        var sheets = viz.getWorkbook().getActiveSheet().getWorkSheets();
         for (int i = 0; i < sheets.length; i++) {
             if (year == "") {
                 sheets[i].getActiveSheet().clearFilterAsync("YEAR(Order Date)");
